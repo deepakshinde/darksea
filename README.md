@@ -4,7 +4,7 @@ A dark colored theme for Rails intended to be used in an admin/dashboard capacit
 
 ## Quick Setup
 
-If your app *is* an administration tool you can get setup quickly. Being that this is a Bootstrap theme, you will need to include Bootstrap in your `Gemfile` alongside this theme.
+If your app *is* an administration tool you can get setup quickly. Being that this is a Bootstrap theme, you will need to include Bootstrap in your `Gemfile` alongside. Go ahead and [setup Bootstrap](https://github.com/twbs/bootstrap-rubygem) before proceeding below.
 
 ```ruby
 # Gemfile
@@ -12,16 +12,24 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'darksea', '~> 0.0'
 ```
 
+```scss
+// app/assets/stylesheets/application.scss
+@import "darksea";
+@import "bootstrap";
+```
+
+Darksea must be imported first.
+
 The conscious choice was made not to include Bootstrap as a runtime dependency because:
 
 1. you're likely already using it in your project
 2. if you want to discontinue using this theme you won't be ripping out Bootstrap as well
 
-Bootstrap takes [a little setting up](https://github.com/twbs/bootstrap-rubygem), if you haven't done so already.
-
 ## Setup for admin section
 
 There are far too many ways to structure your admin section, but I'll provide a decent pattern that will probably work for a lot of folks.
+
+[Setup Bootstrap](https://github.com/twbs/bootstrap-rubygem) first, if you haven't already.
 
 ### Routes
 
@@ -36,7 +44,9 @@ namespace :admin do
 end
 ```
 
-Then, we create a couple helpers to determine whether we're in the admin section. And what stylesheet to serve.
+### Helpers
+
+Then, we create a couple helpers to determine whether we're in the admin section and what stylesheet to serve.
 
 ```ruby
 # app/helpers/application_helper.rb
@@ -53,7 +63,19 @@ def relevant_stylesheet
 end
 ```
 
+### Stylesheets
+
 This of course means you need some sort of admin manifest scss file at `app/assets/stylesheets/admin/admin.scss`.
+
+```scss
+@import "darksea";
+@import "bootstrap";
+
+// Your own styles can go below. E.g.
+@import "posts";
+```
+
+### Head
 
 Finally, you'll need to add the following to the `<head>` of your document:
 
@@ -61,4 +83,4 @@ Finally, you'll need to add the following to the `<head>` of your document:
 <%= relevant_stylesheet %>
 ```
 
-This will deliver your admin stylesheet for any route that has "admin" in the path. Not too shabby
+This will deliver your admin stylesheet for any route that has "admin" in the path. Not too shabby.
