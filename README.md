@@ -14,11 +14,20 @@ gem 'darksea', '~> 0.0'
 
 ```scss
 // app/assets/stylesheets/application.scss
-@import "darksea";
+@import "darksea-variables";
 @import "bootstrap";
+@import "darksea";
 ```
 
-Darksea must be imported first.
+```js
+// app/assets/stylesheets/application.js
+...
+//= require bootstrap-sprockets
+//= require darksea
+...
+```
+
+Sandwich the bootstrap `@import` with the DarkSea variables and Bootstrap dependent stylesheets.
 
 The conscious choice was made not to include Bootstrap as a runtime dependency because:
 
@@ -61,6 +70,15 @@ def relevant_stylesheet
     stylesheet_link_tag 'application', media:'all', 'data-turbolinks-track' => true
   end
 end
+
+def relevant_javascript
+  if admin_section?
+    javascript_include_tag 'admin/admin', 'data-turbolinks-track' => true
+  else
+    javascript_include_tag 'application', 'data-turbolinks-track' => true
+  end
+end
+
 ```
 
 ### Stylesheets
@@ -68,12 +86,27 @@ end
 This of course means you need some sort of admin manifest scss file at `app/assets/stylesheets/admin/admin.scss`.
 
 ```scss
-@import "darksea";
+@import "darksea-variables";
 @import "bootstrap";
+@import "darksea";
 
 // Your own styles can go below. E.g.
 @import "posts";
 ```
+
+### Javascripts
+
+Just as we did with stylesheets, we'll need to create an admin manifest for javascript. Create `app/assets/javascripts/admin.js` and make sure the following exists.
+
+```js
+// app/assets/stylesheets/admin/admin.js
+...
+//= require bootstrap-sprockets
+//= require darksea
+...
+```
+
+**Note:** I typically use `application.js` as a starting point for `admin.js` and then add what's above. You can decide whether you want to have any cross-pollination between your user-facing and admin javascripts.
 
 ### Head
 
@@ -81,6 +114,7 @@ Finally, you'll need to add the following to the `<head>` of your document:
 
 ```html.erb
 <%= relevant_stylesheet %>
+<%= relevant_javascript %>
 ```
 
 This will deliver your admin stylesheet for any route that has "admin" in the path. Not too shabby.

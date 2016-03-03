@@ -1,0 +1,50 @@
+.navbar-side {
+  padding:0;
+  margin-bottom:1rem;
+  padding-bottom:1rem;
+  border-bottom:1px solid $gray-dark;
+
+  // Remove the bottom border for wider screens
+  @include media-breakpoint-up(sm) {
+    border-bottom:none;
+  }
+
+  .navbar-brand-sidebar {
+    margin-bottom:1rem;
+    display: block;
+    text-transform: uppercase;
+    font-size:85%;
+    color:$gray;
+
+    .nav-stacked {
+      border-bottom:1px solid lighten($body-bg, 10%);
+    }
+  }
+}
+
+
+// Helps break up vertical navs by adding a border below desired item
+.vertical-divider {
+  border-bottom:1px solid lighten($body-bg, 10%);
+}
+
+
+// Hamburger button on the admin side
+.navbar-toggler-admin {
+  color:lighten($body-bg, 10%);
+  border:1px solid lighten($body-bg, 10%);
+}
+
+
+// Labels a vertical ul/li list
+li.nav-heading {
+  text-transform: uppercase;
+  font-size:80%;
+  padding-left:1rem;
+  padding-bottom:0.5rem;
+  color:$gray;
+
+  a {
+    color:$gray;
+  }
+}

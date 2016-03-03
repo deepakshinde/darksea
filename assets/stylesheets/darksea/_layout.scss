@@ -1,0 +1,68 @@
+body {
+  background-image: none;
+  color:#fff;
+
+  .site-footer {
+    border-top:1px solid lighten($body-bg, 20%);
+    margin-top:4rem;
+    padding:4rem 0;
+    background: darken($body-bg, 5%);
+  }
+}
+
+.admin-container {
+  padding-top:25px;
+}
+
+.alert {
+
+  &.alert-rectangle {
+    border-radius: 0;
+  }
+
+  &.alert-success {
+    background-color:$brand-success;
+    color: darken($brand-success, 25%);
+    border-color:darken($brand-success, 25%);
+  }
+
+  &.alert-alert, &.alert-warning {
+    background-color: $brand-warning;
+    color:darken($brand-warning, 25%);
+    border-color:darken($brand-warning, 25%);
+  }
+
+  &.alert-notice {
+    background: $brand-info;
+    color:#fff;
+  }
+
+  &.alert-error, &.alert-danger {
+    background-color:$brand-danger;
+    border-color:darken($brand-danger, 10%);
+    color:#fff;
+  }
+}
+
+
+//
+// Pagination
+//
+//
+
+// Aliasing kaminari classes to Bootstrap 4
+.page, .next, .last, .first, .prev, .disabled {
+  @extend .page-item;
+
+  a {
+    @extend .page-link;
+    background-color:transparent;
+    border-color:lighten($body-bg, 15%);
+
+    &:hover {
+      background-color:darken($brand-primary, 10%);
+      color:#fff;
+      border-color:darken($brand-primary, 10%);
+    }
+  }
+}
