@@ -117,4 +117,4 @@ Finally, you'll need to add the following to the `<head>` of your document:
 <%= relevant_javascript %>
 ```
 
-This will deliver your admin stylesheet for any route that has "admin" in the path. Not too shabby.
+This will deliver your admin stylesheet and javascript for any route that has "admin" in the path. Not too shabby.
