@@ -2,6 +2,8 @@
 
 A dark colored theme for Rails intended to be used in an admin/dashboard capacity.
 
+**Warning:** I'm currently working on this gem based on the Bootstrap 4 alpha, so stuff is probably going to be wonky. I wouldn't recommend using this yet unless you're just messing around.
+
 ## Quick Setup
 
 If your app *is* an administration tool you can get setup quickly. Being that this is a Bootstrap theme, you will need to include Bootstrap in your `Gemfile` alongside. Go ahead and [setup Bootstrap](https://github.com/twbs/bootstrap-rubygem) before proceeding below.
@@ -118,3 +120,7 @@ Finally, you'll need to add the following to the `<head>` of your document:
 ```
 
 This will deliver your admin stylesheet and javascript for any route that has "admin" in the path. Not too shabby.
+
+## Customization
+
+This theme sets up Bootstrap variables that you may want to tweak for your own needs. You can override these variables by doing the following.
