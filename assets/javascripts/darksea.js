@@ -1,2 +1,2 @@
 //= require ./darksea/helloworld
-//= require ../../vendor/assets/javascripts/metisMenu.js
+//= require_tree ../../vendor/assets/javascripts/
