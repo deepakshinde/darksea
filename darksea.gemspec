@@ -5,9 +5,7 @@ Gem::Specification.new do |s|
   s.summary     = "A dark theme for a Rails admin dashboard. Based on Bootstrap."
   s.authors     = ["Matt Haliski"]
   s.email       = 'matt@leavingharbor.com'
-  s.files       = 'git ls-files'.split("\n")
+  s.files       = `git ls-files`.split("\n")
   s.homepage    = 'https://github.com/matthaliski/darksea'
   s.license     = 'MIT'
-
-  s.add_runtime_dependency 'font-awesome-sass', '~> 4.5'
 end

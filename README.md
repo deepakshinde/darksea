@@ -12,10 +12,13 @@ If your app *is* an administration tool you can get setup quickly. Being that th
 # Gemfile
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'darksea', '~> 0.0'
+gem 'font-awesome-sass', '~> 4.5' # Optional. Bootstrap alpha doesn't have glyphicons yet
 ```
 
 ```scss
 // app/assets/stylesheets/application.scss
+@import "font-awesome-sprockets"; // Optional
+@import "font-awesome"; // Optional
 @import "darksea-variables";
 @import "bootstrap";
 @import "darksea";
@@ -88,6 +91,8 @@ end
 This of course means you need some sort of admin manifest scss file at `app/assets/stylesheets/admin/admin.scss`.
 
 ```scss
+@import "font-awesome-sprockets"; // Optional
+@import "font-awesome"; // Optional
 @import "darksea-variables";
 @import "bootstrap";
 @import "darksea";

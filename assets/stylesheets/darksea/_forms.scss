@@ -1,0 +1,34 @@
+.form-control {
+  background-color:lighten($body-bg, 10%);
+  border-color:lighten($body-bg, 10%);
+
+  &:focus {
+    box-shadow: none;
+    background-color: #fff;
+    border:1px solid transparent;
+  }
+}
+
+//
+// Input fields allowing for an overlayed submit button
+// TODO: Document this (Jekyll site?)
+//
+//
+
+.btn-overlay {
+  position: relative;
+
+  &.btn-overlay-right .btn,
+  &.btn-overlay-left .btn {
+    position: absolute;
+    top:0;
+    padding:5px 10px;
+    background-color: transparent;
+  }
+
+  &.btn-overlay-left .btn   { left:0; }
+  &.btn-overlay-right .btn  { right:0; }
+
+  &.btn-overlay-left .form-control  { padding-left:35px; }
+  &.btn-overlay-right .form-control { padding-right:35px; }
+}
