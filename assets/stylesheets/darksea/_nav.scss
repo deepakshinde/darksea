@@ -3,35 +3,97 @@
   margin-bottom:$spacer-y;
   padding-bottom:$spacer-y;
   border-bottom:1px solid $gray-dark;
+  border-radius: 0;
 
   // Remove the bottom border for wider screens
   @include media-breakpoint-up(sm) {
     border-bottom:none;
+    background-color: darken($body-bg, 5%);
+    margin-right:-$grid-gutter-width/2;
   }
 
   .nav-stacked {
     margin-top:$spacer-y;
+  }
+
+  .navbar-header {
+    padding:$spacer;
+    @extend .clearfix;
+  }
+
+  .nav-item {
+
+    &.dropdown {
+
+      > .nav-link {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      > ul {
+        background-color: darken($body-bg, 5%);
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+
+        @include media-breakpoint-up(sm) {
+          background-color: darken($body-bg, 10%);
+        }
+
+        li {
+          &:last-child {
+            padding-bottom:$spacer-y;
+          }
+
+          a {
+            color:$gray;
+          }
+        }
+      }
+    }
+
+    &.active .nav-link {
+      background-color: darken($body-bg, 10%);
+    }
+
+    .nav-link:hover {
+      background-color:darken($body-bg, 5%);
+
+      @include media-breakpoint-up(sm) {
+        background-color:darken($body-bg, 10%);
+        border-radius: 0;
+      }
+    }
   }
 }
 
 // Above the main nav
 .nav-search {
   margin-top:$spacer-y;
+
+  @include media-breakpoint-up(sm) {
+    margin-left:$spacer;
+    margin-right:$spacer;
+  }
 }
 
+// TODO: Consider making this a custom class and not override a bootstrap default
+.navbar-default {
+  background-color:darken($body-bg, 2%);
+  margin-left:-$grid-gutter-width/2;
+  margin-right:-$grid-gutter-width/2;
+  margin-bottom:$spacer-y;
+}
 
 // Helps break up vertical navs by adding a border below desired item
 .vertical-divider {
   border-bottom:1px solid lighten($body-bg, 10%);
 }
 
-
 // Hamburger button on the admin side
 .navbar-toggler-admin {
   color:lighten($body-bg, 10%);
   border:1px solid lighten($body-bg, 10%);
 }
-
 
 // Labels a vertical ul/li list
 li.nav-heading {
