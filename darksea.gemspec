@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'darksea'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.date        = '2016-03-01'
   s.summary     = "A dark theme for a Rails admin dashboard. Based on Bootstrap."
   s.authors     = ["Matt Haliski"]
