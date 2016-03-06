@@ -8,4 +8,6 @@ Gem::Specification.new do |s|
   s.files       = 'git ls-files'.split("\n")
   s.homepage    = 'https://github.com/matthaliski/darksea'
   s.license     = 'MIT'
+
+  s.add_runtime_dependency 'font-awesome-sass', '~> 4.5'
 end

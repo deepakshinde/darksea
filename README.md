@@ -2,7 +2,7 @@
 
 A dark colored theme for Rails intended to be used in an admin/dashboard capacity.
 
-**Warning:** I'm currently working on this gem based on the Bootstrap 4 alpha, so stuff is probably going to be wonky. I wouldn't recommend using this yet unless you're just messing around.
+**Warning:** I'm currently working on this gem based on the Bootstrap 4 *alpha*, so stuff is probably going to be wonky. I wouldn't recommend using this yet unless you're just messing around.
 
 ## Quick Setup
 
