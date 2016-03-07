@@ -31,6 +31,8 @@
       }
 
       > ul {
+        list-style-type: none;
+        padding-left:$spacer-x*2;
         background-color: darken($body-bg, 5%);
         border-bottom-left-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
@@ -46,6 +48,11 @@
 
           a {
             color:$gray;
+
+            &:hover {
+              color:$gray-lighter;
+              text-decoration: none;
+            }
           }
         }
       }
