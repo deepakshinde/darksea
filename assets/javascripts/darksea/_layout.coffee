@@ -32,7 +32,7 @@ Layout.mediaBreakpointup = (breakpoint) ->
 
 ready = ->
 
-  fix_main_content_height = ->
+  fixMainContentHeight = ->
     sidenavHeight      = $('.navbar-side').height()
     mainContentHeight  = $('#mainContentContainer').outerHeight()
 
@@ -47,14 +47,9 @@ ready = ->
     if sidenavHeight < $(window).height() && $('body').height() < $(window).height()
       $('#mainContent').css("min-height": ($(window).height() - adjustedHeightSum) + "px")
 
-  # Fix the height right off the bat
-  fix_main_content_height() unless Layout.mediaBreakpointDown('sm')
-
-  # Listen for the window being resized
-  $(window).resize ->
-
-    # Adjust the main content height
-    fix_main_content_height() unless Layout.mediaBreakpointDown('sm')
+  # Adjust the height of the main content section the best we can
+  $(window).on "load resize scroll", (e) ->
+    fixMainContentHeight() unless Layout.mediaBreakpointDown('sm')
 
 
 
