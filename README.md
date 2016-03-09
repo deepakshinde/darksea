@@ -129,3 +129,11 @@ This will deliver your admin stylesheet and javascript for any route that has "a
 ## Customization
 
 This theme sets up Bootstrap variables that you may want to tweak for your own needs. You can override these variables by doing the following.
+
+## Considerations
+
+Below are some assumptions and decisions that were made in the development of this theme. Familiarize yourself with these so you know whether this theme is okay to use in your project.
+
+### Flexbox
+
+TODO: Describe how we use flexbox for layout, but not the Bootstrap flexbox option... yet.

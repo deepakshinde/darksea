@@ -29,42 +29,10 @@ Layout.mediaBreakpointDown = (breakpoint) ->
 Layout.mediaBreakpointup = (breakpoint) ->
   true if $(window).width() > Layout.breakpoints[breakpoint]
 
-# Adjust the height of the main column. Flexbox would cure this as well, but
-# waiting on better Bootstrap support
-Layout.fixMainContentHeight = ->
-
-  collapsedSubmenuHeight = 0
-
-  # Add up the height of all collapsed submenus
-  $('.dropdown').children('ul').each (i, e) ->
-    if $(e).attr("aria-expanded") == "false"
-      collapsedSubmenuHeight += $(e).height()
-
-  # Calculate the height of the side nav
-  sidenavHeight = $('.navbar-side').height() - collapsedSubmenuHeight
-
-  # Get the height of potentially known static elements on the page
-  navbarHeight = Layout.elementHeight('.navbar-default')
-  footerHeight = Layout.elementHeight('.site-footer')
-
-  # Get the sum of the excluded elements
-  excludedElements = navbarHeight + footerHeight + Layout.spacerHeight
-
-  if sidenavHeight > $(window).height()
-    $('#mainContent').css("min-height": (sidenavHeight - excludedElements) + "px")
-
-  if sidenavHeight < $(window).height()
-    $('#mainContent').css("min-height": ($(window).height() - excludedElements) + "px")
-
 
 ready = ->
 
-  Layout.fixMainContentHeight() unless Layout.mediaBreakpointDown('sm')
 
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
-
-# Adjust the height of the main content section the best we can
-$(window).on "resize scroll", (e) ->
-  Layout.fixMainContentHeight() unless Layout.mediaBreakpointDown('sm')
