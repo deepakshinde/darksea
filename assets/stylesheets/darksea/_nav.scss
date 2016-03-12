@@ -73,16 +73,6 @@
   }
 }
 
-// Above the main nav
-.nav-search {
-  margin-top:$spacer-y;
-
-  @include media-breakpoint-up(sm) {
-    margin-left:$spacer;
-    margin-right:$spacer;
-  }
-}
-
 // TODO: Consider making this a custom class and not override a bootstrap default
 .navbar-default {
   background-color:darken($body-bg, 2%);

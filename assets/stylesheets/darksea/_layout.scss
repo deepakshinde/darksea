@@ -1,3 +1,4 @@
+// Namespace
 body.admin {
   color:#fff;
 
@@ -5,15 +6,15 @@ body.admin {
     background-color:darken($body-bg, 5%);
     display: flex;
     min-height: 100vh;
-    flex-direction: column;
   }
 }
 
 .container-admin {
-  flex:1;
-  display: flex;
+
   @include media-breakpoint-up(sm) {
     padding-left:0;
+    flex:1;
+    display: flex;
   }
 
   .main-col-container {
@@ -33,87 +34,110 @@ body.admin {
       }
     }
   }
-}
 
+  //
+  // Header
+  //
+  //
 
-//
-// Header
-//
-//
+  .admin-logo {
+    height:44px;
+  }
 
-.admin-logo {
-  height:44px;
-}
+  .navbar-main {
+    margin-bottom:0;
+  }
 
+  .page-title {
+    background-color: lighten($body-bg, 5%);
+    margin-bottom:$spacer-y;
+    padding-top:$grid-gutter-width/2;
+    padding-left:$grid-gutter-width/2;
+    padding-right:$grid-gutter-width/2;
+    padding-bottom:1px;
+    border-radius: $border-radius;
 
-.alert {
-
-  @include media-breakpoint-up(sm) {
-      margin-bottom:0;
+    @include media-breakpoint-up(sm) {
       margin-left:-$grid-gutter-width/2;
       margin-right:-$grid-gutter-width/2;
-  }
-
-  &.alert-rectangle {
-    border-radius: 0;
-  }
-
-  &.alert-success {
-    background-color:$brand-success;
-    color: darken($brand-success, 25%);
-    border-color:$brand-success;
-  }
-
-  &.alert-alert, &.alert-warning {
-    background-color: $brand-warning;
-    color:darken($brand-warning, 25%);
-    border-color:$brand-warning;
-  }
-
-  &.alert-notice {
-    background: $brand-info;
-    color:#fff;
-  }
-
-  &.alert-error, &.alert-danger {
-    background-color:$brand-danger;
-    border-color:$brand-danger;
-    color:#fff;
-  }
-}
-
-
-//
-// Pagination
-//
-//
-
-// Aliasing kaminari classes to Bootstrap 4
-.page, .next, .last, .first, .prev, .disabled {
-  @extend .page-item;
-
-  a {
-    @extend .page-link;
-    background-color:transparent;
-    border-color:lighten($body-bg, 15%);
-
-    &:hover {
-      background-color:darken($brand-primary, 10%);
-      color:#fff;
-      border-color:darken($brand-primary, 10%);
+      border-radius:0;
     }
   }
-}
 
-//
-// Footer
-//
-//
+  //
+  // Alerts
+  //
+  //
 
-.site-footer {
-  border-top:1px solid darken($body-bg, 3%);
-  padding:15px 0;
-  background: darken($body-bg, 2%);
-  margin-left:-$grid-gutter-width/2;
-  margin-right:-$grid-gutter-width/2;
+  .alert {
+
+    @include media-breakpoint-up(sm) {
+        margin-bottom:0;
+        margin-left:-$grid-gutter-width/2;
+        margin-right:-$grid-gutter-width/2;
+    }
+
+    &.alert-rectangle {
+      border-radius: 0;
+    }
+
+    &.alert-success {
+      background-color:$brand-success;
+      color: darken($brand-success, 25%);
+      border-color:$brand-success;
+    }
+
+    &.alert-alert, &.alert-warning {
+      background-color: $brand-warning;
+      color:darken($brand-warning, 25%);
+      border-color:$brand-warning;
+    }
+
+    &.alert-notice {
+      background: $brand-info;
+      color:#fff;
+    }
+
+    &.alert-error, &.alert-danger {
+      background-color:$brand-danger;
+      border-color:$brand-danger;
+      color:#fff;
+    }
+  }
+
+
+  //
+  // Pagination
+  //
+  //
+
+  // Aliasing kaminari classes to Bootstrap 4
+  .page, .next, .last, .first, .prev, .disabled {
+    @extend .page-item;
+
+    a {
+      @extend .page-link;
+      background-color:transparent;
+      border-color:lighten($body-bg, 15%);
+
+      &:hover {
+        background-color:darken($brand-primary, 10%);
+        color:#fff;
+        border-color:darken($brand-primary, 10%);
+      }
+    }
+  }
+
+  //
+  // Footer
+  //
+  //
+
+  .site-footer {
+    border-top:1px solid darken($body-bg, 3%);
+    padding:15px 0;
+    background: lighten($body-bg, 5%);
+    margin-left:-$grid-gutter-width/2;
+    margin-right:-$grid-gutter-width/2;
+  }
 }

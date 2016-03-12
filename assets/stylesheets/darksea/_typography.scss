@@ -1,7 +1,42 @@
-body {
+// Namespace
+body.admin {
   color:lighten($body-bg, 50%);
 
   h1, h2, h3, h4, h5 {
     color:#fff;
   }
+
+  .page-title {
+    h1, h2, h3, h4, h5 {
+      font-weight:300;
+      margin-bottom:0.4rem;
+    }
+
+    h1 { font-size:1.4rem; }
+    h2 { font-size:1.2rem; }
+    h3 { font-size:1.0rem; }
+
+  }
+
+  //
+  // Links
+  //
+  //
+
+  a.text-info:hover {
+    color:darken($brand-info, 5%) !important;
+  }
+
+  a.text-secondary:hover {
+    color:darken($brand-secondary, 5%) !important;
+  }
+
+  a.text-warning:hover {
+    color:darken($brand-warning, 5%) !important;
+  }
+
+  a.text-danger:hover {
+    color:darken($brand-danger, 5%) !important;
+  }
+
 }
