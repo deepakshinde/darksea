@@ -23,6 +23,14 @@
 
   .nav-item {
 
+    .nav-link {
+      color:$gray-light;
+
+      &:hover {
+        color:$brand-primary;
+      }
+    }
+
     &.dropdown {
 
       > .nav-link {
@@ -56,6 +64,10 @@
           }
         }
       }
+    }
+
+    &.active > .nav-link {
+      color:$brand-primary;
     }
 
     &.active .nav-link {

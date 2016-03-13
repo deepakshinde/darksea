@@ -1,0 +1,36 @@
+// Namespace
+body.admin {
+
+  //
+  // Extending Bootstrap's card styling
+
+  .card {
+    border-top:1px solid lighten($body-bg, 6%);
+    border-bottom:1px solid darken($body-bg, 1%);
+    margin-bottom:$grid-gutter-width;
+
+    .card-header {
+      border-bottom:1px solid lighten($body-bg, 1%);
+
+      + .list-group .list-group-item:first-child {
+        border-top:none;
+      }
+    }
+
+    .list-group-item {
+      background-color: lighten($body-bg, 5%);
+      border-color: lighten($body-bg, 1%);
+    }
+
+    a.list-group-item {
+      &:hover {
+        background-color: lighten($body-bg, 8%);
+      }
+    }
+
+    &.card-outline {
+      background-color:$body-bg;
+      border-color:lighten($body-bg, 5%);
+    }
+  }
+}
