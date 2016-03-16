@@ -38,7 +38,7 @@ $brand-teal:                #00bcb7 !default;
 $brand-sky:                 #75a5c1 !default;
 $brand-success:             #1bc98e !default;
 $brand-info:                #7753ff !default;
-$brand-warning:             #eece6b !default;
+$brand-warning:             #eeaf62 !default;
 $brand-danger:              #df5d6b !default;
 
 $blue-green:                #0d1f23 !default;
@@ -192,8 +192,8 @@ $border-radius:          .25rem !default;
 $border-radius-lg:       .3rem !default;
 $border-radius-sm:       .2rem !default;
 
-$component-active-color: #fff !default;
-$component-active-bg:    $brand-primary !default;
+$component-active-color: lighten($brand-primary, 3%) !default;
+$component-active-bg:    lighten($body-bg, 15%) !default;
 
 $caret-width:            .3em !default;
 $caret-width-lg:         $caret-width !default;
@@ -433,20 +433,20 @@ $jumbotron-bg:                   $gray-lighter !default;
 //
 // Define colors for form feedback states and, by default, alerts.
 
-$state-success-text:             #3c763d !default;
-$state-success-bg:               #dff0d8 !default;
+$state-success-text:             #fff !default;
+$state-success-bg:               $brand-success !default;
 $state-success-border:           darken($state-success-bg, 5%) !default;
 
-$state-info-text:                #31708f !default;
-$state-info-bg:                  #d9edf7 !default;
+$state-info-text:                #fff !default;
+$state-info-bg:                  $brand-info !default;
 $state-info-border:              darken($state-info-bg, 7%) !default;
 
-$state-warning-text:             #8a6d3b !default;
-$state-warning-bg:               #fcf8e3 !default;
+$state-warning-text:             #fff !default;
+$state-warning-bg:               $brand-warning !default;
 $state-warning-border:           darken($state-warning-bg, 5%) !default;
 
-$state-danger-text:              #a94442 !default;
-$state-danger-bg:                #f2dede !default;
+$state-danger-text:              #fff !default;
+$state-danger-bg:                $brand-danger !default;
 $state-danger-border:            darken($state-danger-bg, 5%) !default;
 
 
@@ -564,19 +564,19 @@ $progress-bar-info-bg:        $brand-info !default;
 
 // List group
 
-$list-group-bg:                 $body-bg !default;
-$list-group-border:             lighten($body-bg, 5%) !default;
+$list-group-bg:                 lighten($body-bg, 5%) !default;
+$list-group-border:             lighten($body-bg, 10%) !default;
 $list-group-border-radius:      $border-radius-sm !default;
 $list-group-border-color:       $list-group-border;
 
-$list-group-hover-bg:           #f5f5f5 !default;
+$list-group-hover-bg:           lighten($body-bg, 10%) !default;
 $list-group-active-color:       $component-active-color !default;
 $list-group-active-bg:          $component-active-bg !default;
 $list-group-active-border:      $list-group-active-bg !default;
 $list-group-active-text-color:  lighten($list-group-active-bg, 40%) !default;
 
-$list-group-disabled-color:      $gray-light !default;
-$list-group-disabled-bg:         $gray-lighter !default;
+$list-group-disabled-color:      lighten($body-bg, 18%) !default;
+$list-group-disabled-bg:         lighten($body-bg, 2%) !default;
 $list-group-disabled-text-color: $list-group-disabled-color !default;
 
 $list-group-link-color:         $brand-primary !default;

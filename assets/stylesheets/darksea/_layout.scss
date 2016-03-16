@@ -1,6 +1,7 @@
 // Namespace
 body.admin {
   color:#fff;
+  position: relative;
 
   @include media-breakpoint-up(sm) {
     background-color:darken($body-bg, 5%);
@@ -42,29 +43,6 @@ body.admin {
   // Content that sits between a header and footer in the larget content column
   .main-content {
     padding-bottom:$grid-gutter-width;
-  }
-
-
-  //
-  // Pagination
-  //
-  //
-
-  // Aliasing kaminari classes to Bootstrap 4
-  .page, .next, .last, .first, .prev, .disabled {
-    @extend .page-item;
-
-    a {
-      @extend .page-link;
-      background-color:transparent;
-      border-color:lighten($body-bg, 15%);
-
-      &:hover {
-        background-color:darken($brand-primary, 10%);
-        color:#fff;
-        border-color:darken($brand-primary, 10%);
-      }
-    }
   }
 
   //
