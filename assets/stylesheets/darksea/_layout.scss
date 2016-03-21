@@ -31,10 +31,24 @@ body.admin {
         display:flex;
         flex:1;
         flex-direction: column;
-        border-left:1px solid lighten($body-bg, 2%);
 
         .main-content {
           flex:1;
+        }
+      }
+    }
+  }
+
+  // With $enable-flex set to true we need to add a little fix to ensure elements
+  // appear full width. Hopefully this can be removed once Bootstrap 4 is production
+  // ready.
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @for $i from 1 through $grid-columns {
+      @if $breakpoint != 'xs' {
+        .col-#{$breakpoint}-#{$i} {
+          @include media-breakpoint-down(sm) {
+            width:100%;
+          }
         }
       }
     }
