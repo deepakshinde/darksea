@@ -12,7 +12,10 @@ If your app *is* an administration tool you can get setup quickly. Being that th
 # Gemfile
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'darksea', '~> 0.0'
-gem 'font-awesome-sass', '~> 4.5' # Optional. Bootstrap alpha doesn't have glyphicons yet
+
+# Recommended complimentary gems
+gem 'font-awesome-sass', '~> 4.5' # Optional. Bootstrap 4 alpha doesn't have glyphicons yet
+gem 'autoprefixer-rails' # Ease some browser pain  
 ```
 
 ```scss
