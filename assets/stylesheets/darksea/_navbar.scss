@@ -1,0 +1,31 @@
+body.admin {
+  .navbar {
+
+    &.navbar-dark {
+      .form-control {
+        background-color: lighten($body-bg, 15%);
+        color:lighten($body-color, 15%);
+
+        &:focus {
+          background:#fff;
+          color:lighten($body-color, 5%);
+        }
+      }
+    }
+
+    &.navbar-light {
+      background-color: lighten($body-bg, 60%);
+
+      .form-control {
+        background-color: lighten($body-bg, 80%);
+        color:lighten($body-color, 10%);
+        border-color:transparent;
+
+        &:focus {
+          background:#fff;
+          color:$body-color;
+        }
+      }
+    }
+  }
+}

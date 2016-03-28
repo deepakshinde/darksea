@@ -12,27 +12,27 @@ body.admin {
       border-radius: 0;
     }
 
-    &.alert-success {
-      background-color:$brand-success;
-      color: darken($brand-success, 25%);
-      border-color:$brand-success;
-    }
-
-    &.alert-alert, &.alert-warning {
-      background-color: $brand-warning;
-      color:darken($brand-warning, 25%);
-      border-color:$brand-warning;
-    }
-
-    &.alert-notice {
-      background: $brand-info;
-      color:#fff;
-    }
-
-    &.alert-error, &.alert-danger {
-      background-color:$brand-danger;
-      border-color:$brand-danger;
-      color:#fff;
-    }
+    // &.alert-success {
+    //   background-color:$brand-success;
+    //   color: darken($brand-success, 25%);
+    //   border-color:$brand-success;
+    // }
+    //
+    // &.alert-alert, &.alert-warning {
+    //   background-color: $brand-warning;
+    //   color:darken($brand-warning, 25%);
+    //   border-color:$brand-warning;
+    // }
+    //
+    // &.alert-notice {
+    //   background: $brand-info;
+    //   color:#fff;
+    // }
+    //
+    // &.alert-error, &.alert-danger {
+    //   background-color:$brand-danger;
+    //   border-color:$brand-danger;
+    //   color:#fff;
+    // }
   }
 }
